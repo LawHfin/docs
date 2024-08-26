@@ -11,14 +11,14 @@ ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
 
 A [delegate](../../language-reference/builtin-types/reference-types.md) is a type that represents references to methods with a particular parameter list and return type. When you instantiate a delegate, you can associate its instance with any method with a compatible signature and return type. You can invoke (or call) the method through the delegate instance.
 
-Delegates are used to pass methods as arguments to other methods. Event handlers are nothing more than methods that are invoked through delegates. You create a custom method, and a class such as a windows control can call your method when a certain event occurs. The following example shows a delegate declaration:
+Delegates are used to pass methods as arguments to other methods. Event handlers are methods that are invoked through delegates. You create a custom method, and a class such as a windows control can call your method when a certain event occurs. The following example shows a delegate declaration:
 
 [!code-csharp[csProgGuideDelegates#20](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#20)]
 
 Any method from any accessible class or struct that matches the delegate type can be assigned to the delegate. The method can be either static or an instance method. This flexibility means you can programmatically change method calls, or plug new code into existing classes.
 
 > [!NOTE]
-> In the context of method overloading, the signature of a method does not include the return value. But in the context of delegates, the signature does include the return value. In other words, a method must have the same return type as the delegate.
+> In the context of method overloading, the signature of a method does not include the return value. In the context of delegates, the signature does include the return value. A method must have the same return type as the delegate.
 
 This ability to refer to a method as a parameter makes delegates ideal for defining callback methods. You can write a method that compares two objects in your application. That method can be used in a delegate for a sort algorithm. Because the comparison code is separate from the library, the sort method can be more general.
 
@@ -28,7 +28,7 @@ This ability to refer to a method as a parameter makes delegates ideal for defin
 
 Delegates have the following properties:
 
-- Delegates are similar to C++ function pointers, but delegates are fully object-oriented, and unlike C++ pointers to member functions, delegates encapsulate both an object instance and a method.
+- Delegates are similar to C++ function pointers, but delegates are fully object-oriented. Unlike C++ pointers to member functions, delegates encapsulate both an object instance and a method.
 - Delegates allow methods to be passed as parameters.
 - Delegates can be used to define callback methods.
 - Delegates can be chained together; for example, multiple methods can be called on a single event.
